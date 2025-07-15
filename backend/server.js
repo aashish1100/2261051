@@ -9,14 +9,15 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const DB_URL = process.env.MONGO_URI;
 
-console.log('starting up now', DB_URL);
+
 
 mongoose.connect(DB_URL)
-  .then(() => console.log("it is working"))
-  .catch(err => console.log("error",err.message));
+  .then(() => Log("info", "controller", "MongoDB connected"))
+  .catch(err => Log("error", "controller", `MongoDB connection failed: ${err.message}`));
+
 
 app.use(express.json());
-// app.use(loggerMiddleware);
+// app.use(loggerMiddleware);yyy
 app.use("/shorturls", shortUrlRoutes);
 app.get("/:shortcode", require("./routes/redirectShortcode"));
 
