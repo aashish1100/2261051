@@ -1,0 +1,33 @@
+# Node modules (for both backend and Logging Middleware)
+node_modules/
+
+# Environment files (never commit .env)
+.env
+
+# Log files
+*.log
+logs/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+
+# Backup or temp files
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# Optional - test coverage or debug
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
